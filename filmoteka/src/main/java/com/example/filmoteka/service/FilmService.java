@@ -1,7 +1,7 @@
 package com.example.filmoteka.service;
 
 import com.example.filmoteka.model.Film;
-import com.example.filmoteka.model.Films;
+import com.example.filmoteka.model.FilmMapper;
 import com.example.filmoteka.model.KinopoiskFilm;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +24,6 @@ public class FilmService {
     }
 
     private Film toFilm(@NonNull KinopoiskFilm kinopoiskFilm){
-        return new Film(1l,
-                kinopoiskFilm.getKinopoiskId(),
-                kinopoiskFilm.getRatingImdb(),
-                kinopoiskFilm.getRatingKinopoisk(),
-                kinopoiskFilm.getNameRu(),
-                kinopoiskFilm.getYear(),
-                kinopoiskFilm.getDescription());
-    };
+        return FilmMapper.FILM_MAPPER.toFilm(kinopoiskFilm);
+    }
 }
