@@ -4,17 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Film {
  @Id
  @GeneratedValue(strategy = GenerationType.AUTO)
+ @PrimaryKeyJoinColumn
  private long id;
+
  private int kinopoiskId;
  private float ratingImdb;
  private float ratingKinopoisk;

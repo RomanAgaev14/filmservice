@@ -18,6 +18,7 @@ public class FilmController {
 
     @GetMapping
     public List<Film> getFilms() throws URISyntaxException {
-        return filmService.findAll();
+        List<Film> filmList = filmService.findAll();
+        return filmService.saveAllFilms(filmList);
     }
 }
