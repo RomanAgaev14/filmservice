@@ -7,12 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ParamDTO {
-    String order;
-    String type;
-    Integer ratingFrom;
-    Integer ratingTo;
-    Integer yearFrom;
-    Integer yearTo;
-    Integer page;
+public class IdDTO {
+    Integer kinopoiskId;
 }
